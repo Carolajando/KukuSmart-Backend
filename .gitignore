@@ -1,4 +1,9 @@
+# Python
 __pycache__/
 *.pyc
+
+# Model
 model.h5
+
+# Env
 .env
