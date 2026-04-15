@@ -20,40 +20,20 @@ Treatment Guidance — Receive simple, actionable recommendations based on the d
 Built for East Africa — Designed with smallholder farmers in Kenya and the wider East African region in mind
 
 
-### Project Structure
 
-KukuSmart/
+##Tech Stack
 
-KukuSmart-Backend/        # FastAPI backend + ML model
+Layer -  Technology 
 
-main.py               # API entry point
+Backend    - FastAPI (Python)
 
- class\\\_labels.json     # Disease classification labels
+ML Model - Convolutional Neural Network (CNN)
 
-Requirementst.txt     # Python dependencies
+Image Dataset - Chicken Health Images (Kaggle)
 
- .gitignore
+AI Chatbot  - LLM via API (e.g. OpenAI / open-source transformer) 
 
-KukuSmart-Frontend/       # Frontend interface 
-
-```
-\---
-
-
-###Tech Stack
-
-Layer | Technology 
-
-| Backend | FastAPI (Python) |
-
-| ML Model | Convolutional Neural Network (CNN) |
-
-| Image Dataset | Chicken Health Images — Kaggle |
-
-| AI Chatbot | LLM via API (e.g. OpenAI / open-source transformer) |
-
-| Frontend | |
-\---
+ Frontend -
 
 
 ## Approach
@@ -68,7 +48,7 @@ Layer | Technology
 
 5. User Testing - 
 
-\---
+
 
 ##Getting Started (Backend)
 ###Prerequisites
@@ -130,7 +110,7 @@ uvicorn main:app --reload
 
 The API will be available at `http://localhost:8000`
 
-\---
+
 
 
 
@@ -145,7 +125,7 @@ The API will be available at `http://localhost:8000`
 4. Demonstrated reduction in poultry mortality through accessible, smartphone-based veterinary guidance
 
 
-\---
+
 
 
 ## License
