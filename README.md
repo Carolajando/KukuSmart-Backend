@@ -19,9 +19,7 @@ Treatment Guidance — Receive simple, actionable recommendations based on the d
 
 Built for East Africa — Designed with smallholder farmers in Kenya and the wider East African region in mind
 
-
-
-##Tech Stack
+## Tech Stack
 
 Layer -  Technology 
 
@@ -50,8 +48,8 @@ AI Chatbot  - LLM via API (e.g. OpenAI / open-source transformer)
 
 
 
-##Getting Started (Backend)
-###Prerequisites
+## Getting Started (Backend)
+### Prerequisites
 
 Python 3.8+
  pip
@@ -81,7 +79,7 @@ The
 
 
 
-###Language Model
+### Language Model
 
 The system integrates a Large Language Model (LLM) through an API or local deployment to retrieve, summarize, and generate poultry health recommendations based on user queries.
 
