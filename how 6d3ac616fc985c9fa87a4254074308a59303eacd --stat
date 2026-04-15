@@ -1,0 +1,29 @@
+[33mcommit b6df8339a0e66fc307a32c37b1499df2f0173359[m
+Author: Carol Ajando <carolajando99@gmail.com>
+Date:   Tue Apr 14 08:51:58 2026 +0300
+
+    Add backend files
+
+[33mcommit fceaaf123307f759f8f9e406545636dbb442be4d[m
+Author: Carol Ajando <carolajando99@gmail.com>
+Date:   Mon Apr 13 00:32:21 2026 +0300
+
+    Remove model file from tracking
+
+[33mcommit f3e6f18725adbbebdf2447d7215959aa0adafd6c[m
+Author: Carol Ajando <carolajando99@gmail.com>
+Date:   Mon Apr 13 00:07:49 2026 +0300
+
+    Add backend files
+
+[33mcommit fc3ee252b678a68542ecc62ce4df4be22d495753[m
+Author: Carol Ajando <carolajando99@gmail.com>
+Date:   Sun Apr 12 23:54:42 2026 +0300
+
+    Remove kukusmart_model file from tracking
+
+[33mcommit 6d3ac616fc985c9fa87a4254074308a59303eacd[m
+Author: Carol Ajando <carolajando99@gmail.com>
+Date:   Sun Apr 12 19:18:27 2026 +0300
+
+    Initial backend with FastAPI and model

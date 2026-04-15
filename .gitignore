@@ -2,3 +2,9 @@ model.h5
 __pycache__/
 *.pyc
 .env
+*.h5
+*.pkl
+*.bin
+*.pt
+*.onnx
+*.weights
