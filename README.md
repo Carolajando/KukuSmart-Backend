@@ -83,7 +83,6 @@ The
 
 The system integrates a Large Language Model (LLM) through an API or local deployment to retrieve, summarize, and generate poultry health recommendations based on user queries.
 
-\---
 
 
 ### Installation
