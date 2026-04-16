@@ -5,19 +5,39 @@ Empowering smallholder poultry farmers in East Africa with real-time AI-powered 
 ## Problem Statement
 
 Poultry farming is one of the most accessible livestock activities for smallholder farmers in sub-Saharan Africa, yet it remains highly vulnerable to preventable losses caused by disease, poor management practices, and delayed treatment. Many small-scale farmers in Kenya and across East Africa lack timely access to veterinary services, disease diagnosis expertise, and structured agricultural education â€” leading to high mortality rates and financial loss.
+
 KukuSmart bridges this gap by providing an affordable, always-available, and easy-to-use digital tool that delivers real-time poultry health guidance tailored to the East African context.
 
 
 
 ## What KukuSmart Does
 
-Image-based disease detection â€” Upload a photo of your chicken and get an instant AI diagnosis
+Image-based disease detection â€” Upload a photo of your chicken's feces and get an instant AI diagnosis
 
 AI Chatbot â€” Ask questions about symptoms, treatment, and vaccination schedules in English or Swahili
 
 Treatment Guidance â€” Receive simple, actionable recommendations based on the diagnosis
 
-Built for East Africa â€” Designed with smallholder farmers in Kenya and the wider East African region in mind
+Built for East Africa â€” Designed with smallholder farmers in Kenya and the wider East African region in mind.
+
+## ??? Project Structure
+
+```
+KukuSmart/
++-- backend/
+¦   +-- main.py                        # FastAPI entry point
+¦   +-- rag.py                         # RAG chatbot logic
+¦   +-- class_labels.json              # Disease classification labels
+¦   +-- Requirementst.txt              # Python dependencies
+¦   +-- .gitignore
+¦
++-- frontend/
+¦   +-- index.html                     # Web interface
+¦
++-- Chicken disease prediction.ipynb   # Model training notebook
++-- README.md
++-- LICENSE
+
 
 ## Tech Stack
 
@@ -75,13 +95,61 @@ To improve the model's generalization, data augmentation techniques were applied
 The dataset was split into training, validation, and test sets. The training dataset is further augmented, while the validation and test sets remain untouched.
 
 ## Neural Network Architecture
-The 
-
-
 
 ### Language Model
 
 The system integrates a Large Language Model (LLM) through an API or local deployment to retrieve, summarize, and generate poultry health recommendations based on user queries.
+
+KukuSmart uses a custom **Sequential Convolutional Neural Network (CNN)** trained to classify chicken diseases from fecal images. The model analyses visual patterns in the feces to identify signs of infection.
+
+### Model Summary
+
+| Layer | Output Shape | Parameters |
+|---|---|---|
+| Conv2D (32 filters, 3x3, ReLU) | (None, 222, 222, 32) | 896 |
+| MaxPooling2D (2x2) | (None, 111, 111, 32) | 0 |
+| Conv2D (64 filters, 3x3, ReLU) | (None, 109, 109, 64) | 18,496 |
+| MaxPooling2D (2x2) | (None, 54, 54, 64) | 0 |
+| Conv2D (128 filters, 3x3, ReLU) | (None, 52, 52, 128) | 73,856 |
+| MaxPooling2D (2x2) | (None, 26, 26, 128) | 0 |
+| Flatten | (None, 86,528) | 0 |
+| Dense (512 units, ReLU) | (None, 512) | 44,302,848 |
+| Dropout | (None, 512) | 0 |
+| Dense (4 units, Softmax) | (None, 4) | 2,052 |
+
+**Total Parameters:** 44,398,148 (~169 MB)
+
+### How it Works
+
+1. Farmer uploads a photo of chicken feces through the web interface
+2. Image is resized to 224x224 pixels and normalized
+3. The CNN extracts features through 3 convolutional blocks
+4. The dense layers classify the image into one of 4 disease categories
+5. The result and treatment recommendation is returned to the farmer
+
+---
+
+## The Language Model (RAG Chatbot)
+
+KukuSmart integrates a Retrieval-Augmented Generation (RAG) system that allows farmers to ask natural language questions about poultry health.
+
+### How RAG Works
+
+1. Knowledge Base — Curated PDFs and documents about poultry diseases, treatment, and prevention are loaded into the system
+2. Embedding — Documents are split into chunks and embedded using OpenAI Embeddings, then stored in a ChromaDB vector database
+3. Retrieval — When a farmer asks a question, the most relevant document chunks are retrieved from ChromaDB
+4. Generation — The retrieved context is passed to GPT-3.5-turbo along with the question, which generates a clear, farmer-friendly answer
+5. Response — The answer is returned through the FastAPI `/chat` endpoint
+
+### Knowledge Base Sources
+
+- FAO Guide on Prevention and Control of Poultry Diseases
+- Handbook of Poultry Diseases Important in Africa
+- Poultry Production and Food Security in East Africa (University of Tennessee)
+- IAEA Guide on Improving Farmyard Poultry Production in Africa
+- Research paper on Infectious Poultry Diseases in Smallholder Systems in Africa (MDPI, 2024)
+
+---
 
 
 
