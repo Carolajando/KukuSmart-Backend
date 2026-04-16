@@ -20,24 +20,6 @@ Treatment Guidance - Receive simple, actionable recommendations based on the dia
 
 Built for East Africa - Designed with smallholder farmers in Kenya and the wider East African region in mind.
 
-## Project Structure
-
-
-KukuSmart/
-+-- backend/
-¦   +-- main.py                        # FastAPI entry point
-¦   +-- rag.py                         # RAG chatbot logic
-¦   +-- class_labels.json              # Disease classification labels
-¦   +-- Requirementst.txt              # Python dependencies
-¦   +-- .gitignore
-¦
-+-- frontend/
-¦   +-- index.html                     # Web interface
-¦
-+-- Chicken disease prediction.ipynb   # Model training notebook
-+-- README.md
-+-- LICENSE
-
 
 ## Tech Stack
 
