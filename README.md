@@ -1,4 +1,4 @@
-# KukuSmart — AI-Based Advisory System for Smallholder Poultry Farmers
+# KukuSmart: AI-Based Advisory System for Smallholder Poultry Farmers
 
 Empowering smallholder poultry farmers in East Africa with real-time AI-powered disease diagnosis and agricultural guidance.
 
@@ -12,17 +12,17 @@ KukuSmart bridges this gap by providing an affordable, always-available, and eas
 
 ## What KukuSmart Does
 
-Image-based disease detection — Upload a photo of your chicken's feces and get an instant AI diagnosis
+Image-based disease detection - Upload a photo of your chicken's feces and get an instant AI diagnosis
 
-AI Chatbot — Ask questions about symptoms, treatment, and vaccination schedules in English or Swahili
+AI Chatbot - Ask questions about symptoms, treatment, and vaccination schedules in English or Swahili
 
-Treatment Guidance — Receive simple, actionable recommendations based on the diagnosis
+Treatment Guidance - Receive simple, actionable recommendations based on the diagnosis
 
-Built for East Africa — Designed with smallholder farmers in Kenya and the wider East African region in mind.
+Built for East Africa - Designed with smallholder farmers in Kenya and the wider East African region in mind.
 
-## ??? Project Structure
+## Project Structure
 
-```
+
 KukuSmart/
 +-- backend/
 �   +-- main.py                        # FastAPI entry point
@@ -51,20 +51,18 @@ Image Dataset - Chicken Health Images (Kaggle)
 
 AI Chatbot  - LLM via API (e.g. OpenAI / open-source transformer) 
 
- Frontend -
+
 
 
 ## Approach
 
-1. Data Preprocessing — Images are cleaned, resized, normalized, and split into training, validation, and test sets. Augmentation is applied to improve model performance.
+1. Data Preprocessing - Images are cleaned, resized, normalized, and split into training, validation, and test sets. Augmentation is applied to improve model performance.
 
-2. Model Training — A CNN model is trained to classify poultry diseases from images.
+2. Model Training -  A CNN model is trained to classify poultry diseases from images.
 
-3. Chatbot Integration  — An AI chatbot handles farmer questions about symptoms, treatment, and vaccination.
+3. Chatbot Integration - An AI chatbot handles farmer questions about symptoms, treatment, and vaccination.
 
-4. User Flow  — Farmer uploads image ? receives disease prediction ? gets treatment guidance in English or Swahili.
-
-5. User Testing - 
+4. User Flow  - Farmer uploads image, receives disease prediction, gets treatment guidance in English or Swahili.
 
 
 
@@ -117,7 +115,7 @@ KukuSmart uses a custom **Sequential Convolutional Neural Network (CNN)** traine
 | Dropout | (None, 512) | 0 |
 | Dense (4 units, Softmax) | (None, 4) | 2,052 |
 
-**Total Parameters:** 44,398,148 (~169 MB)
+Total Parameters: 44,398,148 (~169 MB)
 
 ### How it Works
 
@@ -149,7 +147,7 @@ KukuSmart integrates a Retrieval-Augmented Generation (RAG) system that allows f
 - IAEA Guide on Improving Farmyard Poultry Production in Africa
 - Research paper on Infectious Poultry Diseases in Smallholder Systems in Africa (MDPI, 2024)
 
----
+
 
 
 
@@ -197,5 +195,5 @@ The API will be available at `http://localhost:8000`
 
 
 
-This project is licensed under the MIT License — see the \[LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License  see the \[LICENSE](LICENSE) file for details.
 
